@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<PLYMODEL>
+	<model name="terrain">../asset/model/thePirateIsland_XYZ_N.ply
+		<modelInstance>terrain01
+			<posX>0</posX>
+			<posY>0</posY>
+			<posZ>0</posZ>
+			<rotateX>0</rotateX>
+			<rotateY>0</rotateY>
+			<rotateZ>0</rotateZ>
+		</modelInstance>
+	</model>
+	
+</PLYMODEL>
+<EYE_LOCATION>
+	<x>0.0</x>
+	<y>100.0</y>
+	<z>300.0</z>
+</EYE_LOCATION>
