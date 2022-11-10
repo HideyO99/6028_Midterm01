@@ -11,7 +11,7 @@
 class cGUI
 {
 public:
-	cGUI();
+	cGUI(glm::vec3* camPos, glm::vec3* camTar);
 	~cGUI();
 
 	bool ImGUI_init(GLFWwindow* window);
@@ -22,5 +22,7 @@ public:
 
 	std::vector<cMeshObj*>* pVecInstanceMeshObj;
 	cLight* pLight[MAX_LIGHT_SOURCE];
+	glm::vec3* camPos;
+	glm::vec3* camTar;
 };
 

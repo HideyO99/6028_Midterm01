@@ -1,8 +1,10 @@
 #include "cGUI.h"
 
 
-cGUI::cGUI()
+cGUI::cGUI(glm::vec3* camPos, glm::vec3* camTar)
 {
+    this->camPos = camPos;
+    this->camTar = camTar;
 
 }
 
@@ -82,6 +84,12 @@ bool cGUI::ImGUI_render()
                     ImGui::DragFloat("R ##", &pCurrentMeshObject->color_RGBA.r, 0.01f, 0.f, 1.f);
                     ImGui::DragFloat("G ##", &pCurrentMeshObject->color_RGBA.g, 0.01f, 0.f, 1.f);
                     ImGui::DragFloat("B ##", &pCurrentMeshObject->color_RGBA.b, 0.01f, 0.f, 1.f);
+                    ImGui::EndGroup();
+                    ImGui::NewLine();
+                    ImGui::BeginGroup();
+                    ImGui::DragFloat("powerR ##", &pCurrentMeshObject->specular_colour_and_power.r, 0.01f);
+                    ImGui::DragFloat("powerG ##", &pCurrentMeshObject->specular_colour_and_power.g, 0.01f);
+                    ImGui::DragFloat("powerB ##", &pCurrentMeshObject->specular_colour_and_power.b, 0.01f);
                     ImGui::EndGroup();
                     ImGui::NewLine();
                     ImGui::DragFloat("scale##", &pCurrentMeshObject->scale, 0.1f, 0.f, 100.f);
@@ -178,6 +186,19 @@ bool cGUI::ImGUI_render()
                     ImGui::TreePop();
                 }
             }
+            ImGui::EndGroup();
+            ImGui::EndTabItem();
+        }
+        if (ImGui::BeginTabItem("Camera"))
+        {
+            ImGui::BeginGroup(); ::
+            ImGui::DragFloat("camera x##", &camPos->x, 1.f);
+            ImGui::DragFloat("camera y##", &camPos->y, 1.f);
+            ImGui::DragFloat("camera z##", &camPos->z, 1.f);
+            ImGui::NewLine();
+            ImGui::DragFloat("target x##", &camTar->x, 1.f);
+            ImGui::DragFloat("target y##", &camTar->y, 1.f);
+            ImGui::DragFloat("target z##", &camTar->z, 1.f);
             ImGui::EndGroup();
             ImGui::EndTabItem();
         }

@@ -95,7 +95,7 @@ int main(void)
     glfwSwapInterval(1);
 
     //initialize imgui
-    cGUI* gui_ = new cGUI();
+    cGUI* gui_ = new cGUI(&g_cameraEye,&g_cameraTarget);
     result = gui_->ImGUI_init(window);
     if (!result)
     {
@@ -169,6 +169,98 @@ int main(void)
     result = pVAOManager->setInstanceObjRGB("terrain01", glm::vec4(0.55f,0.65f,1.f,1.f));
     result = pVAOManager->setInstanceObjSpecularPower("terrain01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
 
+    //result = pVAOManager->setInstanceObjPosition("smallFactory01", glm::vec4(15.13f, 80.29f, -29.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("smallFactory01", glm::vec4(1.f, 0.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjScale("smallFactory01", 1.f);
+    result = pVAOManager->setInstanceObjSpecularPower("smallFactory01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    //result = pVAOManager->setInstanceObjPosition("lighthouse01", glm::vec4(24.54f, 77.68f, -33.15f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("lighthouse01", glm::vec4(1.f, 0.0f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("lighthouse01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    result = pVAOManager->setInstanceObjRGB("oldhouse01", glm::vec4(1.0f, 0.0f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("oldhouse02", glm::vec4(0.05f, 0.95f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("oldhouse03", glm::vec4(0.5f, 1.0f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("oldhouse04", glm::vec4(0.55f, 1.0f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("oldhouse05", glm::vec4(1.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("oldhouse06", glm::vec4(0.0f, 1.0f, 0.3f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("oldhouse01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("oldhouse02", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("oldhouse03", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("oldhouse04", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("oldhouse05", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("oldhouse06", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    result = pVAOManager->setInstanceObjScale("woodhouse01", 0.25f);
+    result = pVAOManager->setInstanceObjScale("woodhouse02", 0.25f);
+    result = pVAOManager->setInstanceObjScale("woodhouse03", 0.25f);
+    result = pVAOManager->setInstanceObjScale("woodhouse04", 0.25f);
+    result = pVAOManager->setInstanceObjScale("woodhouse05", 0.25f);
+    result = pVAOManager->setInstanceObjScale("woodhouse06", 0.25f);
+    result = pVAOManager->setInstanceObjRGB("woodhouse01", glm::vec4(1.f, 0.f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("woodhouse02", glm::vec4(1.f, 1.f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("woodhouse03", glm::vec4(0.f, 0.f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("woodhouse04", glm::vec4(0.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("woodhouse05", glm::vec4(1.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("woodhouse06", glm::vec4(0.3f, 0.7f, 1.f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("woodhouse01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("woodhouse02", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("woodhouse03", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("woodhouse04", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("woodhouse05", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("woodhouse06", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    result = pVAOManager->setInstanceObjScale("palm01", 0.003f);
+    result = pVAOManager->setInstanceObjScale("palm02", 0.003f);
+    result = pVAOManager->setInstanceObjScale("palm03", 0.003f);
+    result = pVAOManager->setInstanceObjScale("palm04", 0.003f);
+    result = pVAOManager->setInstanceObjScale("palm05", 0.003f);
+    result = pVAOManager->setInstanceObjRGB("palm01", glm::vec4(0.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("palm02", glm::vec4(0.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("palm03", glm::vec4(0.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("palm04", glm::vec4(0.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("palm05", glm::vec4(0.f, 1.f, 0.f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("palm01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("palm02", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("palm03", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("palm04", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("palm05", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    result = pVAOManager->setInstanceObjScale("tree1_01", 0.03f);
+    result = pVAOManager->setInstanceObjScale("tree1_02", 0.1f);
+    result = pVAOManager->setInstanceObjScale("tree1_03", 0.1f);
+    result = pVAOManager->setInstanceObjScale("tree1_04", 0.1f);
+    result = pVAOManager->setInstanceObjScale("tree1_05", 0.1f);
+    result = pVAOManager->setInstanceObjRGB("tree1_01", glm::vec4(0.f, 0.61f, 0.35f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree1_02", glm::vec4(0.f, 0.61f, 0.35f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree1_03", glm::vec4(0.f, 0.61f, 0.35f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree1_04", glm::vec4(0.f, 0.61f, 0.35f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree1_05", glm::vec4(0.f, 0.61f, 0.35f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree1_01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree1_02", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree1_03", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree1_04", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree1_05", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    result = pVAOManager->setInstanceObjScale("tree3_01", 15.f);
+    result = pVAOManager->setInstanceObjScale("tree3_02", 15.f);
+    result = pVAOManager->setInstanceObjScale("tree3_03", 15.f);
+    result = pVAOManager->setInstanceObjScale("tree3_04", 15.f);
+    result = pVAOManager->setInstanceObjRGB("tree3_01", glm::vec4(0.57f, 1.f, 0.56f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree3_02", glm::vec4(0.57f, 1.f, 0.56f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree3_03", glm::vec4(0.57f, 1.f, 0.56f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree3_04", glm::vec4(0.57f, 1.f, 0.56f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree3_01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree3_02", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree3_03", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree3_04", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+
+    result = pVAOManager->setInstanceObjScale("tree_01", 0.5f);
+    result = pVAOManager->setInstanceObjScale("tree_02", 0.5f);
+    result = pVAOManager->setInstanceObjRGB("tree_01", glm::vec4(1.f, 0.16f, 0.32f, 1.f));
+    result = pVAOManager->setInstanceObjRGB("tree_02", glm::vec4(1.f, 0.16f, 0.32f, 1.f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree_01", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
+    result = pVAOManager->setInstanceObjSpecularPower("tree_02", glm::vec4(1.0f, 1.0f, 1.0f, 1000.0f));
 
     while (!glfwWindowShouldClose(window))
     {
