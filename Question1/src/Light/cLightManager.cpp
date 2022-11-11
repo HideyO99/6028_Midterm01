@@ -59,6 +59,7 @@ void cLightManager::loadLightUniformLocation(unsigned int shaderID)
 	plight[4]->angle_location = glGetUniformLocation(shaderID, "Light[4].angle");
 	plight[4]->type_location = glGetUniformLocation(shaderID, "Light[4].type");
 	plight[4]->turnON_location = glGetUniformLocation(shaderID, "Light[4].turnON");
+
 }			
 
 void cLightManager::setLightToShader(unsigned int shaderID)
